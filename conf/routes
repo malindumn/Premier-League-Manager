@@ -1,0 +1,11 @@
+GET     /api/listClubs                  controllers.HomeController.listClubs()
+
+GET     /api/listMatches                controllers.HomeController.listMatches()
+
+GET     /api/randomMatch                controllers.HomeController.addRandomMatch()
+
+GET     /api/searchForMatch/:date       controllers.HomeController.searchMatch(date: String)
+
+GET     /                               controllers.FrontendController.index()
+
+GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <div class="crossfade">
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+    </div>
+
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h2>Premier League <br>2020 / 2021</h2>
+        </div>
+        <ul class="list-unstyled components">
+          <p> Menu </p>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a routerLink = '/viewStandings'>Standings</a>
+          </li>
+          <li>
+            <a routerLink = '/generateRandomMatch'>Generate Random Match</a>
+          </li>
+          <li>
+            <a routerLink = '/viewMatches'>Played Matches</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="content">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand"></a>
+        <form class="d-flex">
+          <a class="navbar-brand">Search For Played Matches</a>
+          <input class="form-control mr-sm-2" id="inputDate" type="text" placeholder="Date" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" [disabled]="clicked" (click)="searchMatch(); clicked=true " type="button" routerLink = '/searchMatch'>Search</button>
+          <button class="btn btn-outline-danger my-2 my-sm-0" id="resetButton" (click)="reset()" type="reset"><a href="#">Reset Date</a></button>
+        </form>
+      </div>
+    </nav>
+
+  </body>
+
+</html>
+

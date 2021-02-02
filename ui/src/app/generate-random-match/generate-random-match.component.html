@@ -1,0 +1,41 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <ng-container matColumnDef="fbClub1Name">
+    <th mat-header-cell *matHeaderCellDef> Name of the Club 01 </th>
+    <td mat-cell *matCellDef="let match"> {{match.fbClub1Name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fbClub2Name">
+    <th mat-header-cell *matHeaderCellDef> Name of the Club 02 </th>
+    <td mat-cell *matCellDef="let match"> {{match.fbClub2Name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="score1">
+    <th mat-header-cell *matHeaderCellDef> Score of the Club 01 </th>
+    <td mat-cell *matCellDef="let match"> {{match.score1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="score2">
+    <th mat-header-cell *matHeaderCellDef> Score of the Club 02 </th>
+    <td mat-cell *matCellDef="let match"> {{match.score2}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="points1">
+    <th mat-header-cell *matHeaderCellDef> Points of the Club 01 </th>
+    <td mat-cell *matCellDef="let match"> {{match.points1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="points2">
+    <th mat-header-cell *matHeaderCellDef> Points of the Club 02 </th>
+    <td mat-cell *matCellDef="let match"> {{match.points2}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let match"> {{match.date}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
